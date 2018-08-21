@@ -1,15 +1,15 @@
 @font-face {
   font-family: 'ArialMT';
-  src: url('ArialMT.woff2') format('woff2'),
-  url('ArialMT.woff') format('woff');
+  src: url('../fonts/ArialMT.woff2') format('woff2'),
+  url('../fonts/ArialMT.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'ArialMT';
-  src: url('Arial-BoldMT.woff2') format('woff2'),
-  url('Arial-BoldMT.woff') format('woff');
+  src: url('../fonts/Arial-BoldMT.woff2') format('woff2'),
+  url('../fonts/Arial-BoldMT.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }

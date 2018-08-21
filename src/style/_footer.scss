@@ -1,0 +1,12 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5.33rem;
+  color: #858585;
+  padding: 0 3rem;
+
+  & a {
+    margin: 0 0.5rem;
+  }
+}
