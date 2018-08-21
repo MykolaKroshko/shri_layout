@@ -2,7 +2,10 @@
   "name": "007.shri_layout_task",
   "version": "0.1.0",
   "description": "",
-  "scripts": {},
+  "scripts": {
+    "start": "gulp start",
+    "build": "gulp build"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KroshkoNikolay/shri_layout.git"
