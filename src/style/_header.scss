@@ -85,6 +85,11 @@
 }
 
 @media (min-width: 768px) {
+  .header{
+    padding: 2.667rem 3.333rem;
+    border-bottom: 1px solid $light-grey;
+  }
+
   .burger_btn{
     display: none;
   }
