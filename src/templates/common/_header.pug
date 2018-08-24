@@ -1,1 +1,17 @@
 header.header
+  picture.header-logo
+    source(srcset="assets/img/logo@2x.png 2x, assets/img/logo@1x.png 1x")
+    img(src="assets/img/logo@1x.png" alt="Yandex Home logo")
+  button.burger_btn#burger_btn(type='button' aria-label='Toggle nav menu button')
+    .burger_btn-center_line
+  nav.nav#main_nav
+    ul.nav-list
+      li.nav-list_item.nav-list_item--current
+        a.nav-link(href='#')
+          span Сводка
+      li.nav-list_item
+        a.nav-link(href='#')
+          span Устройства
+      li.nav-list_item
+        a.nav-link(href='#')
+          span Сценарии

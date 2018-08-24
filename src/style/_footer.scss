@@ -15,11 +15,6 @@
     text-align: center;
   }
 
-  &-link{
-    color: inherit;
-    text-decoration: none;
-  }
-
   &-copyright{
     margin-top: 2rem;
   }
@@ -28,7 +23,7 @@
     & {
       flex-direction: row;
       justify-content: space-between;
-      padding: 2rem 3rem;
+      padding: 2rem 3.33rem;
 
       &-list_item {
         display: inline-block;
