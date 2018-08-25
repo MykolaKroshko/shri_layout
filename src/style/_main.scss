@@ -1,3 +1,10 @@
-main{
+main {
   flex: 1;
+  margin-top: 4.5rem;
+
+  @media (min-width: 768px) {
+     &{
+        margin-top: 8rem;
+     }
+  }
 }

@@ -1,8 +1,10 @@
 .header{
   padding: 1rem 1.667rem;
-  position: relative;
+  position: fixed;
+  width: 100%;
   display: flex;
   align-items: center;
+  background-color: $white;
 }
 
 .burger_btn{
