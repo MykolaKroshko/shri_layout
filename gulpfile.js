@@ -29,7 +29,6 @@ $.gulp.task('start', $.gulp.series(
     'copy:image',
     'copy:font',
     'css:foundation',
-    'sprite:svg',
   ),
   $.gulp.parallel(
     'watch',
@@ -46,6 +45,5 @@ $.gulp.task('build', $.gulp.series(
     'copy:image',
     'copy:font',
     'css:foundation',
-    'sprite:svg',
   ),
 ));

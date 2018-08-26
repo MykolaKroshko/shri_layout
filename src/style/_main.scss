@@ -3,8 +3,195 @@ main {
   margin-top: 4.5rem;
 
   @media (min-width: 768px) {
-     &{
-        margin-top: 8rem;
-     }
+    &{
+      margin-top: 8rem;
+    }
+  }
+}
+
+.section{
+  padding: 0 $padding-big;
+  &-title{
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 1.5*$padding-big 0 $padding-big 0;
+    &--main{
+      visibility: hidden;
+      width: 0;
+      height: 0;
+      padding: 0;
+    }
+  }
+}
+
+.main-body{
+  border-radius: $padding-big;
+  background: url("../img/bg@1x.jpg") no-repeat center / cover;
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url("../img/bg@2x.jpg");
+  }
+}
+
+.board{
+  &-status{
+    padding: $padding-big;
+  }
+
+  &-hello{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &-description{
+    margin-bottom: 1.25rem;
+  }
+
+  &-data{
+    display: flex;
+
+    &_item{
+      margin-right: $padding-big;
+    }
+
+    &_label{
+      color: $font_color-second;
+      margin-bottom: 0.5rem;
+    }
+
+    &_value{
+      font-size: 2rem;
+      font-weight: bold;
+      display: flex;
+
+      & svg{
+        padding-left: 0.5rem;
+        height: 1.5rem;
+        width: auto;
+        align-self: center;
+      }
+    }
+  }
+
+  &-scenarios{
+    padding-left: $padding-big;
+    padding-bottom: $padding-big;
+    height: $card-height-big+$padding-big;
+    overflow-x: auto;
+    display: flex;
+  }
+}
+
+.filters{
+  &-list{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &-list_item{
+
+  }
+
+  &-item{
+    background-color: $bg-light;
+    padding: 8px 15px;
+    border: none;
+    margin: 5px;
+    color: $black;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 20px;
+
+    &.current{
+      background-color: $yellow;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .section{
+    &-title{
+      padding: 1.5*$padding-big 0 $padding-big 0;
+      display: flex;
+      align-items: center;
+      &--main{
+        visibility: visible;
+        width: initial;
+        height: initial;
+      }
+    }
+  }
+
+  .section--main{
+    padding: 0 $padding-small 0 $padding-huge;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .board{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .section--devices {
+    padding: 0 0 0 $padding-huge;
+  }
+
+  .section--scenarios{
+    padding: 0 $padding-huge 0 $padding-small;
+
+    .scenarios-body{
+      height: 330px;
+    }
+  }
+
+  .section--main,
+  .section--scenarios{
+    width: 50%;
+  }
+
+  .section--devices{
+    width: 100%;
+    .filters{
+      &-list{
+        margin-left: 1rem;
+        display: flex;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .board{
+    flex-direction: row;
+
+    &-status{
+      flex: 1;
+    }
+
+    &-scenarios{
+      padding: 0 $padding-big;
+      height: 100%;
+      width: $card-width + 2*$padding-big;
+      overflow-y: auto;
+      display: block;
+    }
+
   }
 }

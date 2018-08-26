@@ -5,15 +5,37 @@ block vars
 
 block content
   main.content
-    h1 lskdfjnvsf
-    h1 lskdfjnvsf
-    h1 lskdfjnvsf
-    h1 lskdfjnvsf
-    h1 lskdfjnvsf
-    h1 lskdfjnvsf
-    h1 lskdfjnvsf
-    h1 lskdfjnvsf
-    h1 lskdfjnvsf
-    h1 lskdfjnvsf
-    h1 lskdfjnvsf
-    h1 lskdfjnvsf
+    .container
+      section.section.section--main
+        h1.section-title.section-title--main Главное
+        .main-body.board
+          .board-status
+            .board-hello Привет, Геннадий!
+            .board-description Двери и окна закрыты, сигнализация включена.
+            .board-data
+              .board-data_item.board-data_item--home
+                .board-data_label Дома
+                .board-data_value +23
+              .board-data_item.board-data_item--outside
+                .board-data_label За окном
+                .board-data_value +19
+                  include ../../images/svg/cloud-drizzle.svg
+          #board-scenarios.board-scenarios
+      section.section.section--scenarios
+        h1.section-title Избранные сценарии
+        .scenarios-body
+      section.section.section--devices
+        h1.section-title Избранные устройства
+          .filters
+            ul.filters-list
+              li.filters-list_item
+                button.filters-item.current(type="button" data-type="all") Все
+              li.filters-list_item
+                button.filters-item(type="button" data-type="zone" data-value="kitchen") Кухня
+              li.filters-list_item
+                button.filters-item(type="button" data-type="zone" data-value="room") Зал
+              li.filters-list_item
+                button.filters-item(type="button" data-type="device" data-value="lamp") Лампочка
+              li.filters-list_item
+                button.filters-item(type="button" data-type="device" data-value="cam") Камеры
+        .devices-body

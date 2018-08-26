@@ -1,5 +1,5 @@
 .header{
-  padding: 1rem 1.667rem;
+  padding: $padding-small $padding-big;
   position: fixed;
   width: 100%;
   display: flex;
@@ -15,7 +15,7 @@
   border: none;
   top: 50%;
   transform: translateY(-50%);
-  right: 1.667rem;
+  right: $padding-big;
 
   &:before,
   &:after,
