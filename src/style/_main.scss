@@ -123,6 +123,37 @@ main {
   }
 
   .section{
+
+    &--main{
+      width: 50%;
+      padding: 0 $padding-small 0 $padding-huge;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--scenarios{
+      width: 50%;
+      padding: 0 $padding-huge 0 $padding-small;
+
+      .scenarios-body{
+        height: 3*$card-height-small+2*$padding-small;
+        display: flex;
+        flex-wrap: wrap;
+        overflow-y: auto;
+      }
+    }
+
+    &--devices {
+      padding: 0 0 0 $padding-huge;
+      width: 100%;
+      .filters{
+        &-list{
+          margin-left: 1rem;
+          display: flex;
+        }
+      }
+    }
+
     &-title{
       padding: 1.5*$padding-big 0 $padding-big 0;
       display: flex;
@@ -135,45 +166,11 @@ main {
     }
   }
 
-  .section--main{
-    padding: 0 $padding-small 0 $padding-huge;
-    display: flex;
-    flex-direction: column;
-
-  }
-
   .board{
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-
-  .section--devices {
-    padding: 0 0 0 $padding-huge;
-  }
-
-  .section--scenarios{
-    padding: 0 $padding-huge 0 $padding-small;
-
-    .scenarios-body{
-      height: 330px;
-    }
-  }
-
-  .section--main,
-  .section--scenarios{
-    width: 50%;
-  }
-
-  .section--devices{
-    width: 100%;
-    .filters{
-      &-list{
-        margin-left: 1rem;
-        display: flex;
-      }
-    }
   }
 }
 
