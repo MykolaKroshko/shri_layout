@@ -59,6 +59,7 @@
   opacity: 0;
   transform: scale(0);
   transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
   font-size: 2rem;
 
   &.visible{

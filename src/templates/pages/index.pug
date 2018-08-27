@@ -7,7 +7,8 @@ block content
   main.content
     .container
       section.section.section--main
-        h1.section-title.section-title--main Главное
+        h1.section-title.section-title--main
+          span Главное
         .main-body.board
           .board-status
             .board-hello Привет, Геннадий!
@@ -22,11 +23,13 @@ block content
                   include ../../images/svg/cloud-drizzle.svg
           #board-scenarios.board-scenarios
       section.section.section--scenarios
-        h1.section-title Избранные сценарии
+        h1.section-title
+          span Избранные сценарии
         .scenarios-body
       section.section.section--devices
-        h1.section-title Избранные устройства
-          .filters
+        h1.section-title
+          span Избранные устройства
+          .filters#device-filters
             ul.filters-list
               li.filters-list_item
                 button.filters-item.current(type="button" data-type="all") Все
@@ -38,4 +41,8 @@ block content
                 button.filters-item(type="button" data-type="device" data-value="lamp") Лампочка
               li.filters-list_item
                 button.filters-item(type="button" data-type="device" data-value="cam") Камеры
+          button#filters-toggle_btn.filters-toggle_btn.filters-item.current(type="button" aria-label='Toggle filters menu button')
+            span.filters-toggle_btn-text
+            span.filters-toggle_btn-icon
+              include ../../images/svg/arrow-down.svg
         .devices-body

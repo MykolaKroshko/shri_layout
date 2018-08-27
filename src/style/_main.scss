@@ -15,6 +15,10 @@ main {
     font-size: 1.5rem;
     margin: 0;
     padding: 1.5*$padding-big 0 $padding-big 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     &--main{
       visibility: hidden;
       width: 0;
@@ -90,6 +94,26 @@ main {
 }
 
 .filters{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: $modal-fade;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0);
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+  font-size: 2rem;
+
+  &.visible{
+    transform: scale(1);
+    opacity: 1;
+  }
+
   &-list{
     margin: 0;
     padding: 0;
@@ -97,7 +121,7 @@ main {
   }
 
   &-list_item{
-
+    text-align: center;
   }
 
   &-item{
@@ -107,11 +131,21 @@ main {
     margin: 5px;
     color: $black;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 2rem;
     border-radius: 20px;
 
     &.current{
       background-color: $yellow;
+    }
+  }
+
+  &-toggle_btn{
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+
+    &-text{
+      margin-right: 0.5rem;
     }
   }
 }
@@ -171,6 +205,23 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  .filters{
+    position: static;
+    display: block;
+    flex: 1;
+    background-color: transparent;
+    opacity: 1;
+    transform: scale(1);
+
+    &-item{
+      font-size: 13px;
+    }
+
+    &-toggle_btn{
+      display: none;
+    }
   }
 }
 
