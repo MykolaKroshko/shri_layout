@@ -4,6 +4,8 @@
     const toggleBtn = document.getElementById('filters-toggle_btn');
     const menu = document.getElementById('device-filters');
     const body = document.querySelector('body');
+    const devices = window.devices;
+    let devicesList = document.getElementById('devices');
 
     function toggleMenu() {
       menu.classList.toggle('visible');
@@ -23,19 +25,56 @@
 
     function setCurrentFilter(target){
       if (!target){
-        return;
+        target = menu.querySelector('.filters-item[data-type="all"]');
       }
       if (!target.classList.contains('current')){
-        var current = menu.querySelector('.current');
+        const current = menu.querySelector('.current');
         if (current) {
           current.classList.remove('current');
         }
         target.classList.add('current');
-        var type = target.dataset && target.dataset.type ? target.dataset.type : null;
-        var value = target.dataset && target.dataset.value ? target.dataset.value : null;
+        const type = target.dataset && target.dataset.type ? target.dataset.type : null;
+        const value = target.dataset && target.dataset.value ? target.dataset.value : null;
+        displayDevices(type, value);
       }
       toggleBtn.querySelector('.filters-toggle_btn-text').innerText = target.innerText;
       closeMenu();
+    }
+
+    function displayDevices(type, value){
+      const parent = devicesList.cloneNode();
+      let filtered = [];
+      if (type === 'all') {
+        filtered = devices
+      } else {
+        filtered = devices.filter(obj => (
+          obj[type] === value
+        ))
+      }
+      for (let i = 0; i < filtered.length; i++){
+        const data = filtered[i];
+        const li = document.createElement("li");
+        const button = document.createElement("button");
+        const icon = document.createElement('span');
+        const title = document.createElement('span');
+        const description = document.createElement('span');
+        button.setAttribute('type', 'button');
+        button.className = 'devices-list_item';
+        icon.className = 'device-icon';
+
+        title.className = 'device-title';
+        title.innerText = data.name;
+        description.className = 'device-description';
+        description.innerText = data.description;
+
+        button.appendChild(icon);
+        button.appendChild(title);
+        button.appendChild(description);
+        li.appendChild(button);
+        parent.appendChild(li);
+      }
+      devicesList.parentNode.replaceChild(parent, devicesList);
+      devicesList = parent;
     }
 
     setCurrentFilter(menu.querySelector('.current'));

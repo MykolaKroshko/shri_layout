@@ -32,17 +32,18 @@ block content
           .filters#device-filters
             ul.filters-list
               li.filters-list_item
-                button.filters-item.current(type="button" data-type="all") Все
+                button.filters-item(type="button" data-type="all") Все
               li.filters-list_item
                 button.filters-item(type="button" data-type="zone" data-value="kitchen") Кухня
               li.filters-list_item
                 button.filters-item(type="button" data-type="zone" data-value="room") Зал
               li.filters-list_item
-                button.filters-item(type="button" data-type="device" data-value="lamp") Лампочка
+                button.filters-item(type="button" data-type="type" data-value="lamp") Лампочка
               li.filters-list_item
-                button.filters-item(type="button" data-type="device" data-value="cam") Камеры
+                button.filters-item(type="button" data-type="type" data-value="cam") Камеры
           button#filters-toggle_btn.filters-toggle_btn.filters-item.current(type="button" aria-label='Toggle filters menu button')
             span.filters-toggle_btn-text
             span.filters-toggle_btn-icon
               include ../../images/svg/arrow-down.svg
-        .devices-body
+        .devices
+          ul.devices-list#devices
