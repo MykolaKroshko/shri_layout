@@ -4,6 +4,9 @@
     const toggleBtn = document.getElementById('filters-toggle_btn');
     const menu = document.getElementById('device-filters');
     const body = document.querySelector('body');
+    const scrollBtns = document.querySelector('.devices_scroll');
+    const scrollLeft = scrollBtns.querySelector('.devices_scroll-btn--left');
+    const scrollRight = scrollBtns.querySelector('.devices_scroll-btn--right');
     const devices = window.devices;
     let devicesList = document.getElementById('devices');
 
@@ -21,6 +24,7 @@
       if (body.classList.contains('noscroll') && body.offsetWidth > 768) {
         closeMenu();
       }
+      toggleScrollBtns();
     }
 
     function setCurrentFilter(target){
@@ -83,6 +87,40 @@
           console.log(target)
         });
       });
+      devicesList.addEventListener('scroll', scrollBtnsState);
+      toggleScrollBtns();
+    }
+
+    function toggleScrollBtns(){
+      if (devicesList.scrollWidth > devicesList.offsetWidth) {
+        scrollBtns.classList.remove('hidden');
+        scrollBtnsState()
+      } else {
+        scrollBtns.classList.add('hidden');
+        scrollLeft.disabled = true;
+        scrollRight.disabled = true;
+      }
+    }
+
+    function scrollBtnsState(){
+      if (devicesList.scrollLeft <= 0) {
+        scrollLeft.disabled = true;
+        scrollRight.disabled = false;
+      } else if (devicesList.scrollLeft >= devicesList.scrollWidth - devicesList.offsetWidth){
+        scrollLeft.disabled = false;
+        scrollRight.disabled = true;
+      } else {
+        scrollLeft.disabled = false;
+        scrollRight.disabled = false;
+      }
+    }
+
+    function onScrollLeft(){
+      devicesList.scrollLeft = devicesList.scrollLeft - devicesList.offsetWidth;
+    }
+
+    function onScrollRight(){
+      devicesList.scrollLeft = devicesList.scrollLeft + devicesList.offsetWidth;
     }
 
     setCurrentFilter(menu.querySelector('.current'));
@@ -99,5 +137,9 @@
     toggleBtn.addEventListener('click', toggleMenu);
 
     window.addEventListener('resize', onResize);
+
+    scrollLeft.addEventListener('click', onScrollLeft);
+
+    scrollRight.addEventListener('click', onScrollRight);
   }
 )();

@@ -41,6 +41,11 @@ block content
                 button.filters-item(type="button" data-type="type" data-value="lamp") Лампочка
               li.filters-list_item
                 button.filters-item(type="button" data-type="type" data-value="cam") Камеры
+          .devices_scroll.hidden
+            button.devices_scroll-btn.devices_scroll-btn--left(type="button" aria-label="scroll left")
+              include ../../images/svg/arrow-left.svg
+            button.devices_scroll-btn.devices_scroll-btn--right(type="button" aria-label="scroll right")
+              include ../../images/svg/arrow-left.svg
           button#filters-toggle_btn.filters-toggle_btn.filters-item.current(type="button" aria-label='Toggle filters menu button')
             span.filters-toggle_btn-text
             span.filters-toggle_btn-icon
