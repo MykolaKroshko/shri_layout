@@ -55,26 +55,34 @@
         const data = filtered[i];
         const li = document.createElement("li");
         const button = document.createElement("button");
-        const icon = document.createElement('span');
-        const title = document.createElement('span');
-        const description = document.createElement('span');
+        const icon = document.createElement('div');
+        const texts = document.createElement('div');
+        const title = document.createElement('div');
+        const description = document.createElement('div');
         button.setAttribute('type', 'button');
-        button.className = 'devices-list_item';
+        button.classList.add('devices-list_item', 'device');
         icon.className = 'device-icon';
-
+        icon.style.backgroundImage = 'url("assets/img/' + data.icon + '")';
+        texts.className = 'device-texts';
         title.className = 'device-title';
         title.innerText = data.name;
         description.className = 'device-description';
         description.innerText = data.description;
-
         button.appendChild(icon);
-        button.appendChild(title);
-        button.appendChild(description);
+        texts.appendChild(title);
+        texts.appendChild(description);
+        button.appendChild(texts);
         li.appendChild(button);
         parent.appendChild(li);
       }
       devicesList.parentNode.replaceChild(parent, devicesList);
       devicesList = parent;
+      parent.querySelectorAll(".devices-list_item").forEach(function(el) {
+        el.addEventListener("click", function (e) {
+          var target = e.target;
+          console.log(target)
+        });
+      });
     }
 
     setCurrentFilter(menu.querySelector('.current'));

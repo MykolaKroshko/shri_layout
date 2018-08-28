@@ -29,3 +29,9 @@ a:hover{
 .noscroll{
   overflow: hidden;
 }
+
+.no-scrollbar-parent{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}

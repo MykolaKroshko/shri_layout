@@ -150,26 +150,54 @@ main {
   }
 }
 
-.devices{
+.devices {
 
-  &-list{
+  & .no-scrollbar-parent {
+    height: $card-height-big;
+  }
+
+  &-list {
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
+    padding-bottom: 17px;
     list-style-type: none;
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
+    box-sizing: content-box;
 
-    &_item{
+    &_item {
       width: $card-width;
       height: $card-height-big;
-      margin-right: 1.5*$padding-big;
+      margin-right: 0.75*$padding-big;
       border: none;
       background-color: $bg-light;
       border-radius: $padding-big;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       padding: 0.75*$padding-big;
     }
+  }
+}
+
+.device{
+  &-icon{
+    width: 2rem;
+    height: 2rem;
+    background: no-repeat center / contain;
+  }
+
+  &-title{
+    font-weight: bold;
+    font-size: 1.16667rem;
+    text-align: left;
+  }
+
+  &-description{
+    color: $font_color-second;
+    text-align: left;
   }
 }
 
@@ -203,12 +231,6 @@ main {
     &--devices {
       padding: 0 0 0 $padding-huge;
       width: 100%;
-      .filters{
-        &-list{
-          margin-left: 1rem;
-          display: flex;
-        }
-      }
     }
 
     &-title{
@@ -237,6 +259,12 @@ main {
     background-color: transparent;
     opacity: 1;
     transform: scale(1);
+
+    &-list{
+      margin-left: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+    }
 
     &-item{
       font-size: 13px;

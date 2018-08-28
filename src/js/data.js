@@ -5,6 +5,7 @@ var devices = [
     state: 1,
     type: 'lamp',
     description: 'Включено',
+    icon: 'svg/icon_sun_yellow.svg',
     value: {
       max: 1000,
       min: 1,
@@ -22,6 +23,7 @@ var devices = [
     zone: 'kitchen',
     state: 2,
     type: 'cam',
+    icon: 'svg/icon_sun.svg',
     description: 'Включится в 17:00'
   },
   {
@@ -29,6 +31,7 @@ var devices = [
     zone: 'room',
     state: 2,
     type: 'temp',
+    icon: 'svg/icon_temperature.svg',
     description: 'Выключено до 17:00',
     value: {
       max: 30,
@@ -55,11 +58,12 @@ var devices = [
     zone: 'room',
     state: 1,
     type: 'floor',
+    icon: 'svg/icon_sun.svg',
     description: 'Включено',
     value: {
       max: 40,
       min: 20,
-      current: 23
+      current: 23,
     },
   },
   {
@@ -67,12 +71,14 @@ var devices = [
     zone: 'room',
     state: 2,
     type: 'lamp',
+    icon: 'svg/icon_sun_yellow.svg',
     description: 'Включится в 17:00'
   },
   {
     name: 'Philips Zhirui',
     state: 0,
     type: 'lamp',
+    icon: 'svg/icon_sun.svg',
     description: 'Выключено'
   },
   {
@@ -80,6 +86,7 @@ var devices = [
     state: 1,
     type: 'lamp',
     description: 'Включено',
+    icon: 'svg/icon_sun_yellow.svg',
   },
 ];
 
