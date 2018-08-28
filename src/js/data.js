@@ -92,27 +92,27 @@ var devices = [
 
 var scenarios = [
   {
-    icon: 'icon_sun_yellow',
+    icon: 'svg/icon_sun_yellow.svg',
     title: 'Выключить весь свет в доме и во дворе',
     description: '',
   },
   {
-    icon: 'icon_scheduled',
+    icon: 'svg/icon_scheduled.svg',
     title: 'Я ухожу',
     description: '',
   },
   {
-    icon: 'icon_sun_yellow',
+    icon: 'svg/icon_sun_yellow.svg',
     title: 'Включить свет<br/>в коридоре',
     description: '',
   },
   {
-    icon: 'icon_temperature_yellow',
+    icon: 'svg/icon_temperature_yellow.svg',
     title: 'Набрать горячую ванну',
     description: 'Начнётся в 18:00',
   },
   {
-    icon: 'icon_temperature_yellow',
+    icon: 'svg/icon_temperature_yellow.svg',
     title: 'Сделать пол тёплым во всей квартире',
     description: '',
   }
